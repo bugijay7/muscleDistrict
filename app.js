@@ -28,7 +28,7 @@ app.use(session({
   resave: false,  
   saveUninitialized: false,
   cookie: {
-  secure: false, // because you’re on HTTP (change to true in prod with HTTPS)
+  secure: true, // because you’re on HTTP (change to true in prod with HTTPS)
   httpOnly: true,
   sameSite: 'none', // or 'none' if you switch to HTTPS and want cross-site cookies
 }
