@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Profile() {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://muscledistrict.onrender.com/api/user/profile', data, {
-      credentials: 'include', // send cookies for session auth
+    axios.get('https://muscledistrict.onrender.com/api/user/profile', {
+      withCredentials: true, // Ensures cookies are sent (important for sessions)
     })
       .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch profile');
-        return res.json();
-      })
-      .then((data) => {
-        setProfile(data);
+        setProfile(res.data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error(err);
+        console.error('Error fetching profile:', err);
         setLoading(false);
       });
   }, []);
