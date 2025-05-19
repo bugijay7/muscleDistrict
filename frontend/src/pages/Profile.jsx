@@ -5,7 +5,7 @@ function Profile() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/profile', {
+    fetch('https://muscledistrict.onrender.com/api/profile', {
       credentials: 'include', // send cookies for session auth
     })
       .then((res) => {

@@ -11,7 +11,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/user/profile', {
+        const res = await axios.get('https://muscledistrict.onrender.com/api/user/profile', {
           withCredentials: true,
         });
         setUser(res.data.user);

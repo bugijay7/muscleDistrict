@@ -53,7 +53,7 @@ function BookClass() {
   useEffect(() => {
     const fetchUsername = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/user/profile', { withCredentials: true });
+        const res = await axios.get('https://muscledistrict.onrender.com/api/user/profile', { withCredentials: true });
         setUsername(res.data.user.username);
       } catch (err) {
         setMessage({ type: 'error', text: 'Failed to fetch user. Please login.' });

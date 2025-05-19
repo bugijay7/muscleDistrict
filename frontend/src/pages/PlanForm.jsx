@@ -7,7 +7,7 @@ function PlanForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/api/save-plan', {
+      const response = await fetch('https://muscledistrict.onrender.com/api/save-plan', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
