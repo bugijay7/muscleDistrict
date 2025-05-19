@@ -28,12 +28,14 @@ app.use(session({
   resave: false,  
   saveUninitialized: false,
   cookie: {
-  secure: false, // because you’re on HTTP (change to true in prod with HTTPS)
+  secure: true, // because you’re on HTTP (change to true in prod with HTTPS)
   httpOnly: true,
-  sameSite: 'lax', // or 'none' if you switch to HTTPS and want cross-site cookies
+  sameSite: 'none', // or 'none' if you switch to HTTPS and want cross-site cookies
 }
 
 }));
+
+app.set('trust proxy', 1); // add this before app.use(session(...))
 
 // Import and configure passport strategies
 app.use(passport.initialize());
