@@ -51,7 +51,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api', bookClass); 
 app.use('/api', savePlan );
-app.use('/api/profile', profileRoutes ); // Ensure this is imported and used
+app.use('/api/user/profile', profileRoutes ); // Ensure this is imported and used
 
 
 
